@@ -60,6 +60,8 @@ public class OAuth {
     public static final String OAUTH_CALLBACK_CONFIRMED = "oauth_callback_confirmed";
 
     public static final String OAUTH_VERIFIER = "oauth_verifier";
+    
+    public static final String OAUTH_ERROR_MESSAGE = "oauth_error_message";
 
     /**
      * Pass this value as the callback "url" upon retrieving a request token if

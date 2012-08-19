@@ -203,9 +203,11 @@ public abstract class AbstractOAuthProvider implements OAuthProvider {
             setResponseParameters(responseParams);
 
             if (token == null || secret == null) {
+            	String message = responseParams.getFirst(OAuth.OAUTH_ERROR_MESSAGE);
+            	
                 throw new OAuthExpectationFailedException(
-                        "Request token or token secret not set in server reply. "
-                                + "The service provider you use is probably buggy.");
+                        "Request token or token secret not set in server reply. "                		
+                         + ((message != null) ? message : "The service provider you use is probably buggy."));
             }
 
             consumer.setTokenWithSecret(token, secret);
